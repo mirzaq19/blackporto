@@ -1,0 +1,416 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    min-height: 2000px;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    z-index: 9999;
+    transition: .5s;
+}
+.scrollbar{
+    width: 0%;
+    height: 6px;
+    background: rgb(54, 187, 248);
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 50px;
+}
+.logo .garis{
+    margin-top: 3px;
+    transition: ease-in-out .5s;
+}
+
+.header a{
+    text-decoration: none;
+    color: white;
+    font-size: 2.2em;
+    font-weight: 500;
+}
+.logo a:hover~.garis{
+    width: 100%;
+    height: 4px;
+    background-color: white;
+}
+#tombolAs{
+    position: relative;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+#tombolAs .burger{
+    width: 28px;
+    height: 4px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all .5s ease-in-out;
+}
+#tombolAs .burger::before,#tombolAs .burger::after{
+    content: '';
+    position: absolute;
+    width: 28px;
+    height: 4px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all .5s ease-in-out;
+}
+#tombolAs .burger::before{
+    transform: translateY(-10px);
+}
+#tombolAs .burger::after{
+    transform: translateY(10px);
+}
+#tombolAs.active .burger{
+    transform: translateX(-20px);
+    background: transparent;
+}
+#tombolAs.active .burger::before{
+    transform: rotate(45deg) translate(14px,-14px);
+}
+#tombolAs.active .burger::after{
+    transform: rotate(-45deg) translate(14px,14px);
+}
+main{
+    position: relative;
+    z-index: 100;
+    transition: .6s;
+}
+main.active{
+    transform: translateX(-400px);
+}
+.container{
+    min-height: 100vh;
+    padding: 80px;
+    width: 100%;
+}
+.intro{
+    position: relative;
+    background-color: black;
+    background-image: url(../img/satu.png);
+    background-size: cover;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+.intro .content{
+    padding-left: 15px;
+    border-left: 4px solid white;
+    max-width: 600px;
+}
+.intro .content h2{
+    font-size: 2.2em;
+    cursor: pointer;
+    transition: .5s;
+}
+.intro .content h2:hover{
+    font-size: 2.4em;
+}
+.intro .content h2 span{
+    color: rgb(18, 154, 233);
+}
+.intro .content p{
+    margin-top: 10px;
+    font-weight: 350;
+}
+.intro .content a{
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+    border: 2px solid white;
+    background-color: black;
+    color: white;
+    padding: 10px 30px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 500;
+    transition: .5s;
+}
+.intro .content a:hover{
+    border: 2px solid white;
+    background-color: white;
+    color: black;
+}
+.intro .bulat_intro{
+    position: absolute;
+    bottom: -200px;
+    left: -200px;
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    background-color: white;
+}
+.about{
+    position: relative;
+    background-color: rgb(0, 194, 253);
+    color: white;
+    overflow: hidden;
+}
+.about h2{
+    font-size: 3.5em;
+}
+.about .bulat_about{
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    height: 350px;
+    width: 350px;
+    border-radius: 50%;
+    background-color: white;
+}
+.about .content{
+    width: 100%;
+    padding: 50px;
+    border: 8px solid white;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+.about p,.about ul li{
+    font-size: 1.4em;
+    font-weight: 300;
+}
+/* .about ul li{
+    text-indent: 10px;
+} */
+.about_isi{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.about .aKiri,.about .aKanan{
+    width: 47%;
+}
+.education{
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+}
+.education .placedj{
+    position: relative;
+    top: -260px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.education .edu_judul{
+    background-color: rgb(0, 194, 253);
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+.education .edu_judul h2{
+    margin-top: 55%;
+    font-size: 2em;
+}
+.education .edu_kotak{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+}
+
+.eduKiri{
+    width: 50%;
+    height: 100%;
+    background-color: rgb(218, 211, 211);
+    background-image: url(../img/Kotak.png);
+    background-size: cover;
+}
+.eduKanan{
+    width: 50%;
+    height: 100%;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(236, 230, 236);
+}
+.education .pendF, .education .Org{
+    margin-bottom: 15px;
+}
+.Edu_isi {
+    margin-top: 20px;
+}
+.Edu_isi h3{
+    margin-bottom: 7px;
+    font-size: 1.3em;
+}
+.skill{
+    position: relative;
+    background-color: white;
+}
+.skill h2{
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+.skill h3{
+    font-size: 1.5em;
+}
+.skill .barpath{
+    margin: 10px 0;
+    width: 100%;
+    height: 35px;
+    padding: 5px;
+    background-color: rgb(218, 219, 215);
+    border-radius: 30px;
+}
+.skill .pro{
+    background-color: teal;
+    height: 100%;
+    border-radius: 25px;
+    color: white;
+    text-align: center;
+    font-weight: 500;
+}
+footer{
+    position: relative;
+}
+footer .contain{
+    width: 100%;
+    padding: 40px;
+    background-color: rgb(26, 25, 25);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+footer .contain span{
+    font-weight: 400;
+    font-size: 1.2em;
+}
+footer .copy{
+    text-align: center;
+}
+footer .copy a{
+    text-decoration: none;
+    color: rgb(0, 132, 255);
+    font-weight: 300;
+    font-size: 1.2em;
+}
+footer .social{
+    margin: 0 auto;
+}
+footer .social ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+footer .social ul li{
+    float: left;
+    margin: 5px;
+}
+
+footer .social ul li a{
+    display: grid;
+    border: 2px solid white;
+    place-items: center;
+    padding: 10px;
+    font-size: 1.1em;
+    font-weight: 800;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    transition: .4s;
+}
+footer .social ul li a:hover{
+    background-color: white;
+    color: black;
+}
+.fa-heart{
+    color: #dc3545;
+}
+
+aside{
+    position: fixed;
+    width: 400px;
+    top: 0;
+    right: -200px;
+    height: 100vh;
+    background: linear-gradient(to top,#008aff,#00ffe7);
+    padding: 40vh 0;
+    z-index: 1;
+    transition: .4s;
+}
+aside.active{
+    right: 0;
+}
+aside ul li{
+    list-style: none;
+    width: 100%;
+}
+aside ul li a{
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    border-bottom: 2px solid white;
+    width: 100%;
+    text-align: center;
+    font-size: 1.6em;
+    font-weight: 400;
+    text-transform: uppercase;
+    transition: .4s;
+}
+
+aside ul li a:hover{
+   font-size: 1.8em;
+}
+
+@media (max-width: 767px){
+    .intro .content h2{
+        font-size: 1.9em;
+        cursor: pointer;
+        transition: .5s;
+    }
+    .intro .content h2:hover{
+        font-size: 2em;
+    }
+    .about_isi{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .about h2{
+        font-size: 2.5em;
+    }
+    .about p,.about ul li{
+        font-size: 1.2em;
+        font-weight: 300;
+    }
+    .about .aKiri,.about .aKanan{
+        width: 100%;
+    }
+    .about .aKanan{
+        margin-top: 20px;
+    }
+    .edu_kotak{
+        flex-direction: column;
+    }
+    .eduKiri,.eduKanan{
+        width: 100%;
+    }
+}
